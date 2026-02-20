@@ -14,6 +14,7 @@
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./App.css";
+import fotoPerfil from "./assets/Thomas-marinheiro.jpeg";
 
 // ─── Credenciais EmailJS ─────────────────────────────────────
 const EMAILJS_SERVICE = "service_j1i09b9";
@@ -556,7 +557,7 @@ export default function App() {
               <div className="fade-in" style={{ position: "relative" }}>
                 <div className="about-image-wrap">
                   <img
-                    src="src/assets/Thomas-marinheiro.jpeg"
+                    src={fotoPerfil}
                     alt="Thomas Marinheiro"
                     style={{
                       width: "100%",
