@@ -1,0 +1,84 @@
+/* ============================================================
+   index.css — Reset global, variáveis CSS e estilos base
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap");
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Variáveis — Dark Mode (padrão) ─────────────────────────── */
+:root {
+  --bg: #050a0f;
+  --bg2: #0a1420;
+  --bg3: #0f1e30;
+  --surface: rgba(255, 255, 255, 0.04);
+  --border: rgba(0, 212, 255, 0.12);
+  --accent: #00d4ff;
+  --accent2: #b16cea;
+  --text: #e8f4f8;
+  --text-muted: #7a9bb5;
+  --glass: rgba(10, 30, 50, 0.7);
+  --glow: 0 0 30px rgba(0, 212, 255, 0.15);
+  --glow-strong: 0 0 60px rgba(0, 212, 255, 0.3);
+  --radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Variáveis — Light Mode ──────────────────────────────────── */
+.light {
+  --bg: #f0f6ff;
+  --bg2: #e4eeff;
+  --bg3: #dae8ff;
+  --surface: rgba(0, 0, 0, 0.03);
+  --border: rgba(0, 100, 200, 0.15);
+  --accent: #0066cc;
+  --accent2: #7c3aed;
+  --text: #0a1628;
+  --text-muted: #4a6080;
+  --glass: rgba(240, 246, 255, 0.8);
+  --glow: 0 0 30px rgba(0, 102, 204, 0.1);
+  --glow-strong: 0 0 60px rgba(0, 102, 204, 0.2);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  transition:
+    background 0.4s,
+    color 0.4s;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ── Scrollbar personalizada ────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+#root {
+  min-height: 100vh;
+}
