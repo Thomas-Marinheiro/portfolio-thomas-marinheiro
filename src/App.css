@@ -478,6 +478,45 @@ section {
   box-shadow: 0 0 8px var(--accent);
 }
 
+.skills-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.skills-badges .badge {
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.badge-logo {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.skills-badges .badge,
+.tool-badge {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: default;
+}
+.skills-badges .badge:hover,
+.tool-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+}
+
 .tools-grid {
   display: flex;
   gap: 10px;

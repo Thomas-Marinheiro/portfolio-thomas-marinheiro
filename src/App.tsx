@@ -23,24 +23,98 @@ const EMAILJS_PUBLIC = "BSUMBKusFt7HXiAwx";
 
 // ─── Dados estáticos ─────────────────────────────────────────
 
-const SKILLS_FRONTEND = [
-  { name: "JavaScript", level: 88, icon: "⚡" },
-  { name: "TypeScript", level: 82, icon: "🔷" },
-  { name: "HTML5", level: 95, icon: "🌐" },
-  { name: "CSS3", level: 90, icon: "🎨" },
-  { name: "React", level: 80, icon: "⚛️" },
-  { name: "Git / GitHub", level: 85, icon: "🐙" },
+const SKILLS = [
+  {
+    name: "React",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "TypeScript",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    name: "JavaScript",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "Node.js",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "HTML",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "Git",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "Python",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    name: "C++",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+  },
+  {
+    name: "Arduino",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
+  },
 ];
 
-const SKILLS_OTHER = [
-  { name: "Python", level: 75, icon: "🐍" },
-  { name: "C++", level: 65, icon: "⚙️" },
-  { name: "Arduino", level: 70, icon: "🤖" },
+const TOOLS = [
+  {
+    name: "VSCode",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+  },
+  {
+    name: "GitHub",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
+  {
+    name: "Figma",
+    logo:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+  },
+  {
+    name: "npm",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original.svg",
+  },
 ];
-
-const TOOLS = ["VSCode", "Git", "GitHub", "Figma", "npm", "Chrome DevTools"];
 
 const PROJECTS = [
+  {
+    title: "Cripto App",
+    desc: "Aplicação web para visualização de criptomoedas com interface moderna exibindo preços, variações e dados de mercado.",
+    tags: ["React", "TypeScript", "API de criptomoedas", "CSS moderno"],
+    github: "https://github.com/Thomas-Marinheiro",
+    demo: "https://cripto-app-sage.vercel.app/",
+    color: "#f7931a",
+    emoji: "₿",
+  },
+  {
+    title: "Cine Scope",
+    desc: "Aplicação web para explorar filmes, trailers e detalhes utilizando API de filmes com interface moderna.",
+    tags: ["React", "TypeScript", "Movie API", "Design responsivo"],
+    github: "https://github.com/Thomas-Marinheiro",
+    demo: "https://cine-scope-beta-mauve.vercel.app/",
+    color: "#e50914",
+    emoji: "🎬",
+  },
   {
     title: "CodeSite",
     desc: "Site institucional de agência de desenvolvimento com hero animado, robô interativo que acompanha o cursor, seções de serviços, projetos e formulário de contato. Design premium com foco em conversão.",
@@ -59,37 +133,61 @@ const PROJECTS = [
     color: "#b16cea",
     emoji: "🎨",
   },
+  {
+    title: "Portfólio Developer",
+    desc: "Portfólio profissional desenvolvido para apresentar projetos, habilidades e experiência em desenvolvimento front-end.",
+    tags: ["React", "TypeScript", "Animações CSS", "Design System", "Deploy na Vercel"],
+    github: "https://github.com/Thomas-Marinheiro",
+    demo: "#hero",
+    color: "#00d4ff",
+    emoji: "📁",
+  },
+  {
+    title: "NexTask",
+    desc: "Sistema de gestão para instituições de ensino, com dashboard interativo de aulas, controle de tarefas e agenda — construído com React, TypeScript e foco em performance.",
+    tags: ["React", "TypeScript", "Dashboard", "Gestão educacional"],
+    github: "https://github.com/Thomas-Marinheiro",
+    demo: "https://nextask-sigma.vercel.app/",
+    color: "#4f46e5",
+    emoji: "📊",
+  },
 ];
 
 const TIMELINE = [
   {
-    year: "Mid 2023",
-    title: "O Início",
-    desc: "Dei meus primeiros passos em programação com Python e Arduino. Automações simples que acenderam uma chama — e não apagaram mais.",
-    icon: "🌱",
+    year: "Meados de 2023",
+    title: "Primeiros passos com código e hardware",
+    desc: "Comecei estudando Python e Arduino, montando pequenos projetos e automações simples. Foi a fase em que aprendi lógica, estruturas básicas e como transformar ideias em algo físico funcionando.",
+    icon: "🤖",
   },
   {
-    year: "Late 2023",
+    year: "Final de 2023",
     title: "Descobrindo o Front-End",
-    desc: "Aprendi HTML e CSS do zero. Criei minha primeira página estática e percebi que queria construir coisas que as pessoas pudessem usar de verdade.",
-    icon: "📚",
+    desc: "Conheci HTML e CSS e construí minhas primeiras páginas estáticas. Entendi como estrutura, tipografia e espaçamento mudam completamente a leitura de uma interface.",
+    icon: "🌐",
   },
   {
-    year: "Early 2024",
-    title: "JavaScript & Lógica",
-    desc: "Mergulhei em JavaScript: DOM, eventos, APIs. Os projetos começaram a ganhar vida. Git e GitHub viraram parte da rotina.",
+    year: "Início de 2024",
+    title: "JavaScript no navegador",
+    desc: "Aprofundei em JavaScript, manipulando DOM, eventos e consumindo APIs. Comecei a dar vida às interfaces, adicionando interações e carregando dados reais.",
     icon: "⚡",
   },
   {
-    year: "Mid 2024",
-    title: "Projetos em Produção",
-    desc: "Lancei o CodeSite e o MR Agency — sites completos, em produção, com animações avançadas e responsividade total. Do zero ao deploy.",
+    year: "Meados de 2024",
+    title: "Primeiros projetos em produção",
+    desc: "Lancei o CodeSite e o MR Agency, sites completos publicados e acessíveis para qualquer pessoa. Trabalhei responsividade, animações e detalhes de experiência do usuário.",
     icon: "🚀",
   },
   {
+    year: "Hoje",
+    title: "Professor de Programação e Robótica",
+    desc: "Atuo como professor de programação e robótica, ensinando lógica, eletrônica e desenvolvimento. Explicar conceitos diariamente me obrigou a organizar melhor meu raciocínio e escrever código mais claro. Ensinar me fez querer construir — não só explicar.",
+    icon: "👨‍🏫",
+  },
+  {
     year: "2025",
-    title: "React, TypeScript & Mercado",
-    desc: "Evoluindo para tecnologias modernas e construindo portfólio sólido. Pronto para contribuir com um time e crescer como desenvolvedor profissional.",
+    title: "Transição para Desenvolvedor Front-End",
+    desc: "Estou evoluindo em React e TypeScript, focado em projetos com interfaces modernas e integrações reais com APIs. Busco minha primeira oportunidade formal como desenvolvedor front-end, contribuindo em produtos que cheguem ao usuário final.",
     icon: "🎯",
   },
 ];
@@ -215,33 +313,6 @@ function ParticleCanvas({ dark }: ParticleCanvasProps) {
   );
 }
 
-// ─── Componente: Barra de habilidade ─────────────────────────
-interface Skill {
-  name: string;
-  level: number;
-  icon: string;
-}
-
-function SkillBar({ skill, animate }: { skill: Skill; animate: boolean }) {
-  return (
-    <div className="skill-item fade-in">
-      <div className="skill-header">
-        <span className="skill-name">
-          <span>{skill.icon}</span>
-          {skill.name}
-        </span>
-        <span className="skill-pct">{skill.level}%</span>
-      </div>
-      <div className="skill-bar">
-        <div
-          className="skill-fill"
-          style={{ width: animate ? `${skill.level}%` : "0%" }}
-        />
-      </div>
-    </div>
-  );
-}
-
 // ─── Componente: Card de projeto ─────────────────────────────
 interface Project {
   title: string;
@@ -288,8 +359,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <a
           className="project-link demo"
           href={project.demo}
-          target="_blank"
-          rel="noreferrer"
+          {...(project.demo.startsWith("http")
+            ? { target: "_blank", rel: "noreferrer" }
+            : {})}
         >
           ↗ Live Demo
         </a>
@@ -303,7 +375,6 @@ export default function App() {
   const [dark, setDark] = useState(true);
   const [loaded, setLoaded] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
-  const [skillsAnimate, setSkillsAnimate] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [formStatus, setFormStatus] = useState<
     "idle" | "sending" | "success" | "error"
@@ -333,8 +404,6 @@ export default function App() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            // Dispara animação das barras de skill quando a seção aparece
-            if (entry.target.closest("#skills")) setSkillsAnimate(true);
           }
         });
       },
@@ -543,6 +612,14 @@ export default function App() {
               >
                 ✉ Contato
               </button>
+              <a
+                className="btn btn-outline"
+                href="https://drive.google.com/file/d/1rkhVvQ5QD_iIx6sGxSzlMKLUZLeynuw2/view?usp=drive_link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ⬇ Baixar CV
+              </a>
             </div>
           </div>
         </section>
@@ -595,7 +672,7 @@ export default function App() {
                 <div className="about-stats fade-in delay-4">
                   {[
                     ["1.5", "Anos Estudando"],
-                    ["2+", "Projetos Reais"],
+                    [String(PROJECTS.length), "Sites em Produção"],
                     ["6+", "Tecnologias"],
                     ["∞", "Curiosidade"],
                   ].map(([n, l]) => (
@@ -625,36 +702,45 @@ export default function App() {
             </div>
 
             <div className="skills-grid">
-              {/* Front-End */}
               <div className="skills-col fade-in delay-1">
-                <h3>🖥️ Front-End</h3>
-                {SKILLS_FRONTEND.map((s) => (
-                  <SkillBar key={s.name} skill={s} animate={skillsAnimate} />
-                ))}
+                <div className="section-label" style={{ marginBottom: 16 }}>
+                  // tecnologias
+                </div>
+                <div className="skills-badges">
+                  {SKILLS.map((s) => (
+                    <span className="badge" key={s.name}>
+                      <img
+                        src={s.logo}
+                        alt={s.name}
+                        className="badge-logo"
+                        loading="lazy"
+                      />
+                      {s.name}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              {/* Outras tecnologias + ferramentas */}
               <div className="skills-col fade-in delay-2">
-                <h3>⚙️ Outras Tecnologias</h3>
-                {SKILLS_OTHER.map((s) => (
-                  <SkillBar key={s.name} skill={s} animate={skillsAnimate} />
-                ))}
-
-                <div style={{ marginTop: 40 }}>
-                  <div className="section-label" style={{ marginBottom: 16 }}>
-                    // ferramentas
-                  </div>
-                  <div className="tools-grid">
-                    {TOOLS.map((t) => (
-                      <span
-                        className="tag"
-                        key={t}
-                        style={{ padding: "8px 16px", fontSize: 12 }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                <div className="section-label" style={{ marginBottom: 16 }}>
+                  // ferramentas
+                </div>
+                <div className="tools-grid">
+                  {TOOLS.map((t) => (
+                    <span
+                      className="tag tool-badge"
+                      key={t.name}
+                      style={{ padding: "8px 16px", fontSize: 12 }}
+                    >
+                      <img
+                        src={t.logo}
+                        alt={t.name}
+                        className="badge-logo"
+                        loading="lazy"
+                      />
+                      {t.name}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -692,50 +778,6 @@ export default function App() {
               {PROJECTS.map((p, i) => (
                 <ProjectCard key={p.title} project={p} index={i} />
               ))}
-
-              {/* Card "próximo projeto" — ocupa as 2 colunas */}
-              <div
-                className="project-card project-card-wide fade-in delay-3"
-                style={{ "--card-color": "#43e97b" } as React.CSSProperties}
-              >
-                <div style={{ flex: 1, minWidth: 200 }}>
-                  <div className="project-icon" style={{ color: "#43e97b" }}>
-                    ⚛️
-                  </div>
-                  <div className="project-title">Próximo Projeto</div>
-                  <p className="project-desc">
-                    Em desenvolvimento — aplicação React + TypeScript com foco
-                    em performance e acessibilidade. Em breve no portfólio.
-                  </p>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 12,
-                    alignItems: "flex-start",
-                  }}
-                >
-                  <span
-                    className="tag"
-                    style={{
-                      padding: "8px 16px",
-                      fontSize: 13,
-                      color: "#43e97b",
-                      borderColor: "#43e97b",
-                    }}
-                  >
-                    🔨 Em construção...
-                  </span>
-                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                    {["React", "TypeScript", "CSS Moderno"].map((t) => (
-                      <span className="tag" key={t}>
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
