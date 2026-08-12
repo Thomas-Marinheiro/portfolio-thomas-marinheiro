@@ -1,84 +1,113 @@
-/* ============================================================
-   index.css — Reset global, variáveis CSS e estilos base
-   ============================================================ */
+@import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap");
+@theme {
+  --color-cyber-bg: #18181B;
+  --color-cyber-card: #27272A;
+  --color-cyber-border: #3F3F46;
+  --color-cyber-hover: #323238;
+  --color-cyber-text: #F8FAFC;
+  --color-cyber-muted: #94A3B8;
+  --color-cyber-mint: #00F5A0;
 
-/* ── Reset ─────────────────────────────────────────────────── */
-*,
-*::before,
-*::after {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── Custom Utilities & Reset ───────────────────────────────── */
+*, ::before, ::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-/* ── Variáveis — Dark Mode (padrão) ─────────────────────────── */
-:root {
-  --bg: #050a0f;
-  --bg2: #0a1420;
-  --bg3: #0f1e30;
-  --surface: rgba(255, 255, 255, 0.04);
-  --border: rgba(0, 212, 255, 0.12);
-  --accent: #00d4ff;
-  --accent2: #b16cea;
-  --text: #e8f4f8;
-  --text-muted: #7a9bb5;
-  --glass: rgba(10, 30, 50, 0.7);
-  --glow: 0 0 30px rgba(0, 212, 255, 0.15);
-  --glow-strong: 0 0 60px rgba(0, 212, 255, 0.3);
-  --radius: 16px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ── Variáveis — Light Mode ──────────────────────────────────── */
-.light {
-  --bg: #f0f6ff;
-  --bg2: #e4eeff;
-  --bg3: #dae8ff;
-  --surface: rgba(0, 0, 0, 0.03);
-  --border: rgba(0, 100, 200, 0.15);
-  --accent: #0066cc;
-  --accent2: #7c3aed;
-  --text: #0a1628;
-  --text-muted: #4a6080;
-  --glass: rgba(240, 246, 255, 0.8);
-  --glow: 0 0 30px rgba(0, 102, 204, 0.1);
-  --glow-strong: 0 0 60px rgba(0, 102, 204, 0.2);
-}
-
-/* ── Base ───────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  background-color: #18181B;
+  color: #F8FAFC;
 }
 
 body {
-  font-family: "JetBrains Mono", monospace;
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #18181B;
+  color: #F8FAFC;
   overflow-x: hidden;
-  transition:
-    background 0.4s,
-    color 0.4s;
 }
 
-::selection {
-  background: var(--accent);
-  color: var(--bg);
-}
-
-/* ── Scrollbar personalizada ────────────────────────────────── */
+/* Scrollbar Personalizada */
 ::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
+  width: 8px;
 }
 
-#root {
-  min-height: 100vh;
+::-webkit-scrollbar-track {
+  background: #18181B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border: 1px solid #3F3F46;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00F5A0;
+}
+
+/* Seleção de Texto */
+::selection {
+  background-color: #00F5A0;
+  color: #18181B;
+}
+
+/* Efeito Glow Mint */
+.glow-mint {
+  box-shadow: 0 0 25px rgba(0, 245, 160, 0.2);
+}
+
+.glow-mint-lg {
+  box-shadow: 0 0 45px rgba(0, 245, 160, 0.35);
+}
+
+.border-mint-glow {
+  border-color: rgba(0, 245, 160, 0.3);
+}
+
+/* Animações Flutuantes Antigravity */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(1.5deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(-1.5deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 10s ease-in-out infinite;
+}
+
+/* Efeito de Vidro Fosco Cyber */
+.cyber-glass {
+  background: rgba(39, 39, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(63, 63, 70, 0.6);
+}
+
+/* Transição para Antigravity Tilt 3D */
+.antigravity-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Código em bloco com números */
+.code-line-num {
+  user-select: none;
+  color: #52525B;
+  display: inline-block;
+  width: 2rem;
+  text-align: right;
+  padding-right: 0.75rem;
 }
