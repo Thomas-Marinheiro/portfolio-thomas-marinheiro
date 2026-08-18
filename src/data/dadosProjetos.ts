@@ -1,4 +1,4 @@
-import { ProjetoItem } from "../components/projetos/CartaoProjeto";
+import type { ProjetoItem } from "../components/projetos/CartaoProjeto";
 import image1 from "../assets/print_sites/1.jpg";
 import image2 from "../assets/print_sites/2.jpg";
 import image3 from "../assets/print_sites/code site.jpg";
