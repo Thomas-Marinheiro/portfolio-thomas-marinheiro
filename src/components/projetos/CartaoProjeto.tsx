@@ -1,5 +1,5 @@
-import { CartaoInterativo } from "./CartaoInterativo";
-import { MolduraNavegador } from "./MolduraNavegador";
+import { CartaoInterativo } from "../ui/CartaoInterativo";
+import { MolduraNavegador } from "../ui/MolduraNavegador";
 import { ExternalLink } from "lucide-react";
 import { PreviewSiteProjeto } from "./PreviewSiteProjeto";
 import { TopicosProjeto } from "./TopicosProjeto";

@@ -1,8 +1,8 @@
-import { JanelaCodigo } from "./JanelaCodigo";
-import { CartaoInterativo } from "./CartaoInterativo";
+import { JanelaCodigo } from "../ui/JanelaCodigo";
+import { CartaoInterativo } from "../ui/CartaoInterativo";
 import { ResumoApresentacao } from "./ResumoApresentacao";
 import { CartaoPerfil } from "./CartaoPerfil";
-import { jsonCodeLines } from "../data/dadosApresentacao";
+import { jsonCodeLines } from "../../data/dadosApresentacao";
 
 export function SecaoApresentacao() {
   return (

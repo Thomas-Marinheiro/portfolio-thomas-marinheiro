@@ -1,4 +1,4 @@
-import { CartaoInterativo } from "./CartaoInterativo";
+import { CartaoInterativo } from "../ui/CartaoInterativo";
 import {
   Code2,
   Atom,

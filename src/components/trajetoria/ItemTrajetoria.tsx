@@ -1,4 +1,4 @@
-import { CartaoInterativo } from "./CartaoInterativo";
+import { CartaoInterativo } from "../ui/CartaoInterativo";
 
 export interface EtapaTrajetoria {
   periodo: string;

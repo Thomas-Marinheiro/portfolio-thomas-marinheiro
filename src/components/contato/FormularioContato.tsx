@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Send, CheckCircle2, XCircle } from "lucide-react";
-import { useEnvioEmail } from "../hooks/useEnvioEmail";
-import { CartaoInterativo } from "./CartaoInterativo";
+import { useEnvioEmail } from "../../hooks/useEnvioEmail";
+import { CartaoInterativo } from "../ui/CartaoInterativo";
 
 export function FormularioContato() {
   const formRef = useRef<HTMLFormElement>(null);

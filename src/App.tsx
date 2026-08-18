@@ -1,11 +1,11 @@
-import { Navbar } from "./components/Navbar";
-import { SecaoApresentacao } from "./components/SecaoApresentacao";
-import { SecaoProjetos } from "./components/SecaoProjetos";
-import { SecaoHabilidades } from "./components/SecaoHabilidades";
-import { SecaoTrajetoria } from "./components/SecaoTrajetoria";
-import { SecaoContato } from "./components/SecaoContato";
-import { Footer } from "./components/Footer";
-import { FundoParticulas } from "./components/FundoParticulas";
+import { Navbar } from "./components/layout/Navbar";
+import { SecaoApresentacao } from "./components/apresentacao/SecaoApresentacao";
+import { SecaoProjetos } from "./components/projetos/SecaoProjetos";
+import { SecaoHabilidades } from "./components/habilidades/SecaoHabilidades";
+import { SecaoTrajetoria } from "./components/trajetoria/SecaoTrajetoria";
+import { SecaoContato } from "./components/contato/SecaoContato";
+import { Footer } from "./components/layout/Footer";
+import { FundoParticulas } from "./components/ui/FundoParticulas";
 
 export default function App() {
   return (

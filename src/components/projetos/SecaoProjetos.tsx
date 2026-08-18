@@ -1,6 +1,6 @@
 import { CartaoProjeto } from "./CartaoProjeto";
 import { Folder } from "lucide-react";
-import { LISTA_PROJETOS } from "../data/dadosProjetos";
+import { LISTA_PROJETOS } from "../../data/dadosProjetos";
 
 export function SecaoProjetos() {
   return (

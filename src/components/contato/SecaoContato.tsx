@@ -12,7 +12,7 @@ export function SecaoContato() {
           </div>
 
           {/* Formulário Cyber-Humano */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 lg:mt-9 lg:ml-8">
             <FormularioContato />
           </div>
         </div>

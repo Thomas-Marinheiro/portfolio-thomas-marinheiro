@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# Portfólio — Thomas Marinheiro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Olá! Bem-vindo(a) ao meu portfólio. Aqui eu reuni meus projetos, minha trajetória e um pouco de quem eu sou por trás do código.
 
-Currently, two official plugins are available:
+## Sobre mim
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Eu sou o **Thomas Marinheiro**, Desenvolvedor Front-End. Comecei em 2023, encantado por Python e Arduino, e fui evoluindo até construir aplicações web completas com React, Next.js e TypeScript.
 
-## React Compiler
+Hoje também sou **Professor de Programação e Robótica** — e ensinar me faz ser um desenvolvedor mais claro e paciente.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> Código bom resolve problemas reais de gente real.
 
-## Expanding the ESLint configuration
+Estou aberto a oportunidades como Desenvolvedor Front-End e a novos projetos.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Front-End:** React, Next.js, TypeScript, Tailwind CSS, HTML5, CSS3
+- **Estudando:** Node.js, Python, Back-End, QA & Testes
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Projetos
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Cripto App** — cotações de criptomoedas em tempo real (React + TypeScript)
+- **Cine Scope** — catálogo de filmes com busca rápida (React + TypeScript)
+- **CodeSite Agency** — portal corporativo com Canvas interativo (Vanilla JS)
+- **MR Agency** — landing page de agência digital (HTML/CSS/JS)
+- **NexTask** — dashboard educacional (React + TypeScript)
+
+## Como rodar
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Build de produção:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## Contato
+
+- **E-mail:** thomasmarinheiro32@gmail.com
+- **GitHub:** https://github.com/Thomas-Marinheiro
+- **LinkedIn:** https://www.linkedin.com/in/thomas-marinheiro-a1b567211/
+
+Obrigado pela visita! 💚

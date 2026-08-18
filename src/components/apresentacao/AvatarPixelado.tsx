@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import fotoOficial from "../assets/Thomas-marinheiro.jpeg";
-import fotoPixel from "../assets/Thomas_Pixel.png";
+import fotoOficial from "../../assets/Thomas-marinheiro.jpeg";
+import fotoPixel from "../../assets/Thomas_Pixel.png";
 
 interface PixelAvatarProps {
   className?: string;
