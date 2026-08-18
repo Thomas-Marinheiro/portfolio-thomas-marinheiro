@@ -36,7 +36,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "TypeScript", level: "Avançado", IconComponent: Code2 },
       { name: "JavaScript", level: "Avançado", IconComponent: Terminal },
       { name: "Tailwind CSS", level: "Avançado", IconComponent: Palette },
-      { name: "HTML5 & CSS3", level: "Especialista", IconComponent: Globe },
+      { name: "HTML5 & CSS3", level: "Avançado", IconComponent: Globe },
     ],
   },
   {
@@ -52,8 +52,8 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     title: "Hardware & EdTech",
     skills: [
       { name: "Arduino & IoT", level: "Avançado", IconComponent: Bot },
-      { name: "Robótica Educacional", level: "Especialista", IconComponent: Cpu },
-      { name: "Lógica de Programação", level: "Especialista", IconComponent: Brain },
+      { name: "Robótica Educacional", level: "Avançado", IconComponent: Cpu },
+      { name: "Lógica de Programação", level: "Avançado", IconComponent: Brain },
     ],
   },
   {

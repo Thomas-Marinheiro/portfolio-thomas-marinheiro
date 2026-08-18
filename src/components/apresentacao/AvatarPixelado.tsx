@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import fotoOficial from "../../assets/Thomas-marinheiro.jpeg";
 import fotoPixel from "../../assets/Thomas_Pixel.png";
 
@@ -14,7 +14,8 @@ export function AvatarPixelado({
 }: PixelAvatarProps) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  // null = modo automático (scroll/hover), true = forçado foto HD, false = forçado pixel
+  const [manualMode, setManualMode] = useState<boolean | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +33,18 @@ export function AvatarPixelado({
     };
   }, []);
 
-  // Alternar via clique ou tecla Enter/Espaço
-  const handleToggle = () => {
-    setIsClicked((prev) => !prev);
-  };
+  // Clique alterna entre pixel e foto de forma fixa
+  const handleToggle = useCallback(() => {
+    setManualMode((prev) => {
+      if (prev === null) {
+        // Está no modo automático: vai para o oposto do estado atual
+        const currentlyHd = scrollProgress > 0.5 || isHovered;
+        return !currentlyHd; // true = forçar HD, false = forçar pixel
+      }
+      // Já está no modo manual: alterna
+      return !prev;
+    });
+  }, [scrollProgress, isHovered]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
@@ -44,28 +53,34 @@ export function AvatarPixelado({
     }
   };
 
-  // Define progresso efetivo misturando scroll, hover e clique
-  let effectiveProgress = scrollProgress;
-  if (isClicked) {
-    effectiveProgress = effectiveProgress > 0.5 ? 0 : 1;
-  } else if (isHovered) {
-    effectiveProgress = effectiveProgress > 0.5 ? 0 : 1;
+  // Determina se deve mostrar HD
+  let showHd: boolean;
+  if (manualMode !== null) {
+    // Modo manual: o clique decide
+    showHd = manualMode;
+  } else {
+    // Modo automático: scroll e hover decidem
+    showHd = scrollProgress > 0.5 || isHovered;
   }
 
-  const isHd = effectiveProgress > 0.5;
+  const effectiveProgress = showHd ? 1 : 0;
 
   return (
     <div className={`relative shrink-0 select-none ${className}`}>
       <div
         role="button"
         tabIndex={0}
-        aria-label="Foto de perfil interativa. Clique, passe o mouse ou role a página para alternar entre versão Pixel Art e Foto Oficial HD."
+        aria-label="Foto de perfil interativa. Clique para alternar entre versão Pixel Art e Foto Oficial HD."
         className="relative group cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-[#00F5A0] rounded-full transition-transform duration-300 active:scale-95"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => {
+          if (manualMode === null) setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          if (manualMode === null) setIsHovered(false);
+        }}
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
-        title="Clique, passe o mouse ou role a página para alternar entre Pixel Art e Foto Oficial!"
+        title={showHd ? "Clique para ver a versão Pixel Art!" : "Clique para ver a Foto Oficial!"}
       >
         {/* Brilho / Glow Neomórfico de Fundo */}
         <div
@@ -79,36 +94,39 @@ export function AvatarPixelado({
         <div
           className={`relative ${sizeClassName} rounded-full overflow-hidden border-2 border-[#00F5A0] bg-[#18181B] shadow-2xl transition-all duration-300 group-hover:scale-[1.03]`}
         >
-          {/* Foto Pixel Art (Scroll = 0) */}
+          {/* Foto Pixel Art */}
           <img
             src={fotoPixel}
             alt="Thomas Marinheiro em versão Pixel Art"
-            className="absolute inset-0 h-full w-full object-cover rounded-full transition-all duration-500 ease-out"
+            className="absolute inset-0 h-full w-full object-cover rounded-full"
             style={{
-              opacity: 1 - effectiveProgress,
-              filter: `blur(${(effectiveProgress * 4).toFixed(1)}px)`,
+              opacity: showHd ? 0 : 1,
+              filter: showHd ? "blur(4px)" : "blur(0px)",
               imageRendering: "pixelated",
-              transform: `scale(${1 + (1 - effectiveProgress) * 0.05})`,
+              transform: `scale(${showHd ? 1 : 1.05})`,
+              transition: "opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out",
             }}
           />
 
-          {/* Foto Oficial HD (Scroll > 0) */}
+          {/* Foto Oficial HD */}
           <img
             src={fotoOficial}
             alt="Thomas Marinheiro Foto Oficial HD"
-            className="absolute inset-0 h-full w-full object-cover rounded-full transition-all duration-500 ease-out"
+            className="absolute inset-0 h-full w-full object-cover rounded-full"
             style={{
-              opacity: effectiveProgress,
-              filter: `blur(${((1 - effectiveProgress) * 4).toFixed(1)}px)`,
-              transform: `scale(${1 + effectiveProgress * 0.03})`,
+              opacity: showHd ? 1 : 0,
+              filter: showHd ? "blur(0px)" : "blur(4px)",
+              transform: `scale(${showHd ? 1.03 : 1})`,
+              transition: "opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out",
             }}
           />
 
           {/* Efeito de Varredura / Glitch de Transição */}
           <div
-            className="absolute inset-0 bg-gradient-to-b from-[#00F5A0]/20 via-transparent to-[#38BDF8]/20 pointer-events-none transition-opacity duration-300"
+            className="absolute inset-0 bg-gradient-to-b from-[#00F5A0]/20 via-transparent to-[#38BDF8]/20 pointer-events-none"
             style={{
-              opacity: effectiveProgress > 0.05 && effectiveProgress < 0.95 ? 0.8 : 0,
+              opacity: 0,
+              transition: "opacity 0.3s",
             }}
           />
         </div>
@@ -120,7 +138,7 @@ export function AvatarPixelado({
 
         {/* Badge 2: Indicador de Modo (Pixel / Foto) (Canto Inferior Esquerdo) */}
         <div className="absolute bottom-2 -left-2 z-20 flex items-center bg-[#18181B]/95 border border-[#38BDF8]/70 text-[#38BDF8] text-[10px] sm:text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow-xl backdrop-blur-md transition-transform duration-300 group-hover:scale-105">
-          <span>{isHd ? "Foto" : "Pixel"}</span>
+          <span>{showHd ? "Foto" : "Pixel"}</span>
         </div>
       </div>
     </div>
